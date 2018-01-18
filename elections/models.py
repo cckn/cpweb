@@ -6,7 +6,13 @@ class Candidate(models.Model):
     name = models.CharField(max_length=10)
     inrtoduction = models.TextField()
     area = models.CharField(max_length=15)
-    party_number = models.IntegerField(default=1)
+    party_number = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
+
+
+class Poll(models.Model):
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    area = models.CharField(max_length=15)
